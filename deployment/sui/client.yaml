@@ -7,4 +7,4 @@ envs:
     ws: ~
     basic_auth: ~
 active_env: testnet
-active_address: "0x93361ef61a222c3b93bf23cc68e10d0325bafbfae2a749dcc283a509bdbc5281"
+active_address: "0xa2861cc6af63b50169d4a4030343a65d07fd7f1eb7a963f74073950bd72e0473"

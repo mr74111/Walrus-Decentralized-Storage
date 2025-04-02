@@ -20,11 +20,11 @@ RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-la
     chmod +x /usr/local/bin/walrus
 
 # Create necessary directories
-RUN mkdir -p /root/walrus /root/.walrus /root/.sui/sui_config
+RUN mkdir -p /root/walrus /root/.config/walrus /root/.sui/sui_config
 
 # Expose required ports
 EXPOSE 9696
 
 # Copy and set permissions for the entrypoint script
-COPY walrus/* /root/.walrus/
+COPY walrus/* /root/.config/walrus/
 COPY sui/* /root/.sui/sui_config/

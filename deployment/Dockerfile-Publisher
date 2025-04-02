@@ -20,14 +20,14 @@ RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-la
     chmod +x /usr/local/bin/walrus
 
 # Create necessary directories
-RUN mkdir -p /root/walrus /root/.walrus /root/.sui/sui_config
+RUN mkdir -p /root/walrus /root/.config/walrus /root/.sui/sui_config
 
 # Expose required ports
-EXPOSE 9678
+EXPOSE 6798
 
 # Copy and set permissions for the entrypoint script
-COPY walrus/* /root/.walrus/
+COPY walrus/* /root/.config/walrus/
 COPY sui/* /root/.sui/sui_config/
 
 # Start Walrus Publisher as the main process
-ENTRYPOINT ["walrus", "publisher", "--sub-wallets-dir", "/root/walrus", "--config", "/root/.walrus/config.yaml", "--bind-address", "0.0.0.0:9678", "--max-body-size", "10485760000", "--n-clients", "1"]
+ENTRYPOINT ["walrus", "publisher", "--sub-wallets-dir", "/root/walrus", "--bind-address", "0.0.0.0:6798", "--max-body-size", "10737418240", "--n-clients", "1"]
