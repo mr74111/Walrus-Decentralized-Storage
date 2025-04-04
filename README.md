@@ -13,7 +13,7 @@ To decrypt with OpenSSL, use:
 openssl aes-256-cbc -d -salt -pbkdf2 -iter 10000 -in encryptedfilename -out plaintextfilename
 ```
 
-Files encrypted with the following OpenSSL command can be decrypted on this page:
+To encrypt files compatible with this page, use the following OpenSSL command:
 
 ```shell
 openssl aes-256-cbc -e -salt -pbkdf2 -iter 10000 -in plaintextfilename -out encryptedfilename
