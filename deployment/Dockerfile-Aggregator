@@ -16,7 +16,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui --features tracing
 
 # Install Walrus Client
-RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64 -O /usr/local/bin/walrus && \
+RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64-generic -O /usr/local/bin/walrus && \
     chmod +x /usr/local/bin/walrus
 
 # Create necessary directories

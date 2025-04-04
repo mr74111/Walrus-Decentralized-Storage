@@ -1,35 +1,32 @@
-# Walrus Disk
+# Walrus Decentralized Storage
 
-Welcome to the Walrus Disk, a decentralized storage application that uses the Walrus protocol to store encrypted files. Walrus protocol focuses on providing a robust but affordable solution for storing unstructured content on decentralized storage nodes while ensuring high availability and reliability even in the presence of Byzantine faults.
+Walrus Decentralized Storage is a decentralized storage app using the Walrus protocol to store encrypted files reliably and affordably, even under Byzantine faults.
 
-Walrus Disk uses javascript running within your web browser to encrypt and decrypt files client-side, in-browser. This App makes no network connections during this process, to ensure that your keys never leave the web browser during the process.
+All encryption and decryption happens in-browser with no network connection, ensuring your keys never leave your device.
 
-All client-side cryptography is implemented using the Web Crypto API. Files are encrypted using AES-CBC 256-bit symmetric encryption. The encryption key is derived from the password and a random salt using PBKDF2 derivation with 10000 iterations of SHA256 hashing.
+Files are encrypted with AES-256-CBC using the Web Crypto API. Keys are derived via PBKDF2 (10,000 SHA-256 iterations).
+The encryption is OpenSSL-compatible.
 
-The encryption used by this App is compatible with openssl.
-
-Files encrypted using this App can be decrypted using openssl using the following command:
+To decrypt with OpenSSL, use:
 
 ```shell
 openssl aes-256-cbc -d -salt -pbkdf2 -iter 10000 -in encryptedfilename -out plaintextfilename
 ```
 
-Files encrypted using the following openssl command can be decrypted using this page:
+Files encrypted with the following OpenSSL command can be decrypted on this page:
 
 ```shell
 openssl aes-256-cbc -e -salt -pbkdf2 -iter 10000 -in plaintextfilename -out encryptedfilename
 ```
 
-The encryption keys for all files are stored locally. If you change computers, use the import/export function to migrate your keys to the new computer. If you don't do this, all your keys will be lost. Even the developer cannot recover your files.
+Encryption keys are stored locally. To access your files on another device, use the import/export feature to migrate your keys. If not, your keys — and access to your files — will be permanently lost. Even the developers cannot recover them.
 
-The Walrus system provides an interface that can be used for public testing. For your convenience, walrus provide these at the following hosts:
+Public testing is available via the Walrus system. For convenience, test interfaces are hosted at:
 
 * Aggregator: https://aggregator-devnet.walrus.space
 * Publisher: https://publisher-devnet.walrus.space
 
-Walrus publisher is currently limiting requests to 10 MiB. If you want to upload larger files, you need to run your own publisher.
-
-Please note that because the Walrus protocol currently uses (Testnet) Sui, the data may be updated by the publisher at any time. If you want better service, you can subscribe to the Walrus Disk+ version to get continuous update service.
+The Walrus publisher currently limits uploads to 10 MB. To upload larger files, you’ll need to run your own publisher.
 
 ## File explorer
 ![explorer.png](doc%2Fexplorer.png)

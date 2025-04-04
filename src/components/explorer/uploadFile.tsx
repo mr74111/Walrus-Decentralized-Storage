@@ -64,7 +64,7 @@ export default function UploadFile({ root, reFetchDir }) {
         resultbytes.set(pbkdf2salt, 8);
         resultbytes.set(cipherbytes, 16);
 
-        const publisherUrl = `${setting.publisher}/v1/blobs?epochs=1`;
+        const publisherUrl = `${setting.publisher}/v1/blobs?deletable=true`;
         const config = {
             headers: { 'content-type': 'application/octet-stream' },
             onUploadProgress: (progressEvent) => {
@@ -140,7 +140,7 @@ export default function UploadFile({ root, reFetchDir }) {
                     <Flex direction="column" gap="3">
                         {isWarning && (
                             <Card>
-                                <Text>Walrus publisher limits requests to <Strong>10 MiB</Strong>. Run your own publisher for larger files.</Text>
+                                <Text>Walrus publisher limits requests to <Strong>10 MB</Strong>. Run your own publisher for larger files.</Text>
                             </Card>
                         )}
                         <motion.div
