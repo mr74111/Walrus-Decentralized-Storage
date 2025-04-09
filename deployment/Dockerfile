@@ -12,11 +12,11 @@ RUN git config --global http.sslVerify false
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Install Sui Client from Testnet branch
-RUN cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui --features tracing
+# Install Sui Client from Mainnet branch
+RUN cargo install --locked --git https://github.com/MystenLabs/sui.git --branch mainnet sui --features tracing
 
 # Install Walrus Client
-RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64-generic -O /usr/local/bin/walrus && \
+RUN wget https://storage.googleapis.com/mysten-walrus-binaries/walrus-mainnet-latest-ubuntu-x86_64-generic -O /usr/local/bin/walrus && \
     chmod +x /usr/local/bin/walrus
 
 # Create necessary directories

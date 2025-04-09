@@ -12,7 +12,7 @@ RUN git config --global http.sslVerify false
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Install Sui Client from mainnet branch
+# Install Sui Client from Mainnet branch
 RUN cargo install --locked --git https://github.com/MystenLabs/sui.git --branch mainnet sui --features tracing
 
 # Install Walrus Client

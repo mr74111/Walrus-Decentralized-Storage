@@ -21,23 +21,24 @@ walrus publisher --sub-wallets-dir /root/walrus --bind-address 0.0.0.0:9696 --ma
 walrus aggregator --bind-address 0.0.0.0:9696
 ```
 
-## 6. TRANSFER
-```shell
-sui client transfer --to 0xa2861cc6af63b50169d4a4030343a65d07fd7f1eb7a963f74073950bd72e0473 --object-id 0x2f46f16a7a7f80303c114aa74a101e5c2f2e1e9fd9f3642a0b07b77ec23ac81f
-```
-
-## 7. Tusky
-```shell
-fee parade suspect focus alert sail such rather elephant credit athlete differ evolve industry meat time diary skate sea science rural miss pet liar
-```
-
-## 8. SUI switch to mainnet
+## 6. SUI switch to mainnet
 ```shell
 sui client new-env --alias mainnet --rpc https://fullnode.mainnet.sui.io:443
 sui client switch --env mainnet
 ```
 
-## 9. Delete Blob
+## 7. Delete Blob
 ```shell
 walrus delete --context mainnet --blob-ids=pXa31tS2hpTOUZq7SqB3pYW8FrIWjUAigjZI1bqo4wQ
 ```
+
+## 8. TRANSFER
+```shell
+sui client transfer --to 0xa2861cc6af63b50169d4a4030343a65d07fd7f1eb7a963f74073950bd72e0473 --object-id 0x2f46f16a7a7f80303c114aa74a101e5c2f2e1e9fd9f3642a0b07b77ec23ac81f
+```
+
+## 9. Tusky
+```shell
+fee parade suspect focus alert sail such rather elephant credit athlete differ evolve industry meat time diary skate sea science rural miss pet liar
+```
+
